@@ -56,21 +56,51 @@ fun MyHeader() {
 @Composable
 fun MyFavorites() {
     Column() {
-        Text(text = "Your favorites")
+        Text(text = "Your favorites", fontSize = 20.sp)
         Box(
             modifier = Modifier
                 .background(Color.Gray)
                 .fillMaxWidth()
-                .height(375.dp)
+                .height(400.dp)
         ) {
-
-            Row(modifier = Modifier) {
-                MyMatchCard()
-                MyMatchCard()
+            Column(){
+                Row(modifier = Modifier) {
+                    MyMatchCard()
+                    MyMatchCard()
+                }
+                Row(modifier = Modifier) {
+                    MyMatchCard()
+                    MyMatchCard()
+                }
             }
         }
     }
 }
+
+@Composable
+fun MyRecommendations() {
+    Column() {
+        Text(text = "My Recommendation", fontSize = 20.sp)
+        Box(
+            modifier = Modifier
+                .background(Color.Gray)
+                .fillMaxWidth()
+                .height(400.dp)
+        ) {
+            Column(){
+                Row(modifier = Modifier) {
+                    MyMatchCard()
+                    MyMatchCard()
+                }
+                Row(modifier = Modifier) {
+                    MyMatchCard()
+                    MyMatchCard()
+                }
+            }
+        }
+    }
+}
+
 
 @Composable
 fun MyMatchCard(){
@@ -99,9 +129,10 @@ fun MyMatchCard(){
 @Composable
 fun MySpace() {
     Box(modifier = Modifier.fillMaxSize()) {
-        Column() {
+        Column {
             MyHeader()
             MyFavorites()
+            MyRecommendations()
         }
 
     }
